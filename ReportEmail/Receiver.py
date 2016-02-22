@@ -1,7 +1,7 @@
 #coding=utf-8
 
 
-class Receriver():
+class Receiver():
 
 
     # @conn 数据库连接
@@ -9,23 +9,23 @@ class Receriver():
     # 插入数据
     def insert(self, conn, params):
         cu = conn.cursor()
-        cu.execute("INSERT INTO receriver VALUES(?,?,?,?,?)", params)
+        cu.execute("INSERT INTO receiver VALUES(?,?,?,?)", params)
         conn.commit()
 
     # 删除数据
     def remove(self,conn,params):
         cu = conn.cursor()
-        cu.execute("DELETE FROM receriver WHERE ? = ? and ? = ?",params)
+        cu.execute("DELETE FROM receiver WHERE  product_id = ?",params)
         conn.commit()
 
-    # 修改数据
+    # 根据产品id修改收件人\抄送人\密送人地址
     def update(self,conn,param):
         cu = conn.cursor()
-        cu.execute("UPDATE receriver SET ? = ? WHERE ? = ?",param)
+        cu.execute("UPDATE receiver SET receiver = ? and cc = ? and bcc = ? WHERE product_id = ?",param)
         conn.conmmit()
 
     # 查询数据
     def select(self,conn,param):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM receriver",param)
+        cu.execute("SELECT * FROM receiver where product_id = ?",param)
         print(cu.fetchall())

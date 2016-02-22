@@ -9,7 +9,7 @@ class Product():
     #插入数据(参数是3or4)
     def insert(self, conn, param):
         cu = conn.cursor()
-        cu.execute("INSERT INTO product VALUES(?,?,?)", param)
+        cu.execute("INSERT INTO product VALUES(?,?,?,?)", param)
         conn.commit()
 
     # 删除数据
@@ -18,16 +18,16 @@ class Product():
         cu.execute("DELETE FROM product WHERE id = ?",id)
         conn.commit()
 
-    #根据产品名和版本号修改成新的版本号
+    #根据id修改成新的版本号
     def updateVersion(self,conn,param):
         cu = conn.cursor()
         cu.execute("UPDATE product SET Version= ? WHERE id = ?",param)
         conn.commit()
 
-    #根据id号修改功能模块
+    #根据id号修改产品的功能模块
     def updateComponent(self,conn,param):
         cu = conn.cursor()
-        cu.execute("UPDATE product SET component= ? WHERE id = ?",param)
+        cu.execute("UPDATE product SET component = ? WHERE id = ?",param)
         conn.commit()
 
     #根据id号查询数据
