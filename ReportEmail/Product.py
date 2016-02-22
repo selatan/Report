@@ -9,8 +9,9 @@ class Product():
     #插入数据(参数是3or4)
     def insert(self, conn, param):
         cu = conn.cursor()
-        cu.execute("INSERT INTO product VALUES(?,?,?,?)", param)
+        cu.execute("INSERT INTO product(product_name, version, component) VALUES(?,?,?)", param)
         conn.commit()
+        return cu.lastrowid
 
     # 删除数据
     def remove(self,conn,id):

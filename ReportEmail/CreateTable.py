@@ -2,7 +2,7 @@
 
 import sqlite3
 
-cx = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
+cx = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
 cu = cx.cursor()
 
 # 创建表userinfo——表1
@@ -65,8 +65,8 @@ cu.execute('''CREATE TABLE "newdate" (
           "reopen"  TEXT,
            "resolved"  TEXT,
            "closed"  TEXT,
-           PRIMARY KEY ("product_id"),
-           FOREIGN KEY ("product_id") REFERENCES "product" ("id"))''')
+           FOREIGN KEY ("product_id") REFERENCES "product" ("id")),
+           UNIQUE ("product_id", "date")''')
 
 
 
