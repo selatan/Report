@@ -6,7 +6,7 @@ class Product():
 
     #@conn 数据库连接
     #@params 传入参数的元祖，例如：(产品名, 版本号)
-    #插入数据
+    #插入数据(参数是3or4)
     def insert(self, conn, param):
         cu = conn.cursor()
         cu.execute("INSERT INTO product VALUES(?,?,?)", param)
