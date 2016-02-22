@@ -8,7 +8,7 @@ dao = Product()
 
 
 
-dao.insert(connection,("bestie_Android","1.3.0","模块1,模块2,模块4"))
+dao.insert(connection,("bestie_Android","1.3.0","模块1,模块2"))
 #dao.insert(connection,("bestie_Android","1.4.0","模块1,模块2,模块3"))
 #dao.insert(connection,("bestie_Ios","1.1.0","模块1,模块4"))
 #dao.insert(connection,("bestie_IOS","1.2.0","模块1,模块2,模块3,模块4"))
