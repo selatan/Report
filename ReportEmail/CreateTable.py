@@ -31,7 +31,6 @@ cu.execute('''CREATE TABLE "product" (
 
 #创建表newrequest——表4
 cu.execute('''CREATE TABLE "newrequest" (
-       "id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
        "product_id"  INTEGER NOT NULL,
         "new_request"  TEXT NOT NULL,
         "is_testing"  INTEGER NOT NULL DEFAULT 0,

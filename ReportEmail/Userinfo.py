@@ -13,5 +13,5 @@ class Userinfo():
     #更新数据
     def update(self,conn,param):
         cu=conn.cursor()
-        cu.execute("UPDATE userinfo SET Name = ? WHERE ? = ?",param)
+        cu.execute("UPDATE userinfo SET pw = ? and email_list = ? and bugzilla_pw = ? WHERE username = ?",param)
         conn.commit()
