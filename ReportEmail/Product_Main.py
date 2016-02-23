@@ -2,12 +2,13 @@
 
 import sqlite3
 from ReportEmail.Product import Product
-import sys
+# import sys
+#
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+#connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+connection = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
 
 
 dao = Product()

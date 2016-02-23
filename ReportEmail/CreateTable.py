@@ -66,8 +66,8 @@ cu.execute('''CREATE TABLE "newdate" (
           "reopen"  TEXT,
            "resolved"  TEXT,
            "closed"  TEXT,
-           FOREIGN KEY ("product_id") REFERENCES "product" ("id")),
-           UNIQUE ("product_id", "date")''')
+           FOREIGN KEY ("product_id") REFERENCES "product" ("id"),
+           UNIQUE ("product_id", "date"))''')
 
 
 

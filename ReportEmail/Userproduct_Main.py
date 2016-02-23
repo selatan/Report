@@ -4,7 +4,7 @@ import sqlite3
 from ReportEmail.Userproduct import Userproduct
 
 connection = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
-
+#connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
 
 dao = Userproduct()
 

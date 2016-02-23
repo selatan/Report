@@ -2,17 +2,17 @@
 
 import sqlite3
 from ReportEmail.Newdate import Newdate
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+# import sys
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 #connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
 connection = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
 
 dao = Newdate()
 
-#dao.insert(connection,(3,"2016-02-23", None, None,None,None,None,None,None,"5"))
-#dao.insert(connection,(3,"2016-02-24", None, None,None,None,None,None,"2", "5"))
+dao.insert(connection,(3,"2016-02-23", None, None,None,None,None,None,None,"5"))
+dao.insert(connection,(3,"2016-02-24", None, None,None,None,None,None,"2", "模块"))
 
 # data = dao.select(connection, (3, "2016-02-25"))
 # if (data == None) :
