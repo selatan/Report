@@ -6,19 +6,21 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+#connection = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+connection = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
+
 dao = Newdate()
 
 #dao.insert(connection,(3,"2016-02-23", None, None,None,None,None,None,None,"5"))
 #dao.insert(connection,(3,"2016-02-24", None, None,None,None,None,None,"2", "5"))
 
-data = dao.select(connection, (3, "2016-02-25"))
-if (data == None) :
-    dao.insert(connection,(3,"2016-02-25", None, None,None,None,None,None,None,"5"))
-    print("insert in executed")
-else :
-    print("update is executed")
-    pass
+# data = dao.select(connection, (3, "2016-02-25"))
+# if (data == None) :
+#     dao.insert(connection,(3,"2016-02-25", None, None,None,None,None,None,None,"5"))
+#     print("insert in executed")
+# else :
+#     print("update is executed")
+#     pass
 
 
 #dao.insert(connection,("bestie_Android","1.4.0","模块1,模块2,模块3"))

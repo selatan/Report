@@ -2,7 +2,10 @@
 
 import sqlite3
 
-cx = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+#cx = sqlite3.connect("E:/workspace/python/Report/db/myData.db")
+cx = sqlite3.connect("/Users/a1/Desktop/ProjectReport/myData.db")
+
+
 cu = cx.cursor()
 
 # 创建表userinfo——表1
