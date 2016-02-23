@@ -9,7 +9,7 @@ class Receiver():
     # 插入数据
     def insert(self, conn, params):
         cu = conn.cursor()
-        cu.execute("INSERT INTO receiver VALUES(?,?,?,?)", params)
+        cu.execute("INSERT INTO receiver(product_id,receiver,cc,bcc) VALUES(?,?,?,?)", params)
         conn.commit()
 
     # 删除数据

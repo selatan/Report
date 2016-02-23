@@ -7,7 +7,7 @@ class Returntesting():
     # 插入数据
     def insert(self, conn, params):
         cu = conn.cursor()
-        cu.execute("INSERT INTO returntesting VALUES(?,?,?)", params)
+        cu.execute("INSERT INTO returntesting(product_id,return,is_finish) VALUES(?,?,?)", params)
         conn.commit()
 
     # 根据产品id和回归功能内容删除数据

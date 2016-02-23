@@ -6,7 +6,7 @@ class Userproduct():
     #插入数据
     def insert(self, conn, params):
         cu = conn.cursor()
-        cu.execute("INSERT INTO userproduct VALUES(?,?)", params)
+        cu.execute("INSERT INTO userproduct(username,product_id) VALUES(?,?)", params)
         conn.commit()
 
     #删除数据

@@ -7,7 +7,7 @@ class Userinfo():
     #插入数据
     def insert(self,conn,param):
         cu=conn.cursor()
-        cu.execute("INSERT INTO userinfo VALUES(?,?,?,?,?,?)",param)
+        cu.execute("INSERT INTO userinfo(username,email,pw,email_list,bugzilla_account,bugzilla_pw) VALUES(?,?,?,?,?,?)",param)
         conn.commit()
 
     #更新数据

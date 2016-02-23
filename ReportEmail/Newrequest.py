@@ -7,7 +7,7 @@ class Newrequest():
     # 插入数据
     def insert(self, conn, params):
         cu = conn.cursor()
-        cu.execute("INSERT INTO newrequest VALUES(?,?,?,?)", params)
+        cu.execute("INSERT INTO newrequest(product_id,new_request,is_testing,is-finish) VALUES(?,?,?,?)", params)
         conn.commit()
 
     # 根据产品id和新需求删除一条数据
