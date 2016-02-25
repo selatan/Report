@@ -17,8 +17,8 @@ class Userproduct():
 
 
     #查询数据
-    def select(self,conn,param):
+    def select(self,conn,params):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM userproduct where username = ?",param)
+        cu.execute("SELECT * FROM userproduct where username = ?",params)
         #print(cu.fetchall())  #从结果中取出所有数据
         return cu.fetchall()

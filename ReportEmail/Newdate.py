@@ -32,51 +32,51 @@ class Newdate():
 
 
     # 根据产品id和日期修改每日新增bug数
-    def update_new_everyday(self,conn,param):
+    def update_new_everyday(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET new_everyday = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET new_everyday = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
      # 根据产品id和日期修改每日reopen bug数
-    def update_reopen_everyday(self,conn,param):
+    def update_reopen_everyday(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET reopen_everyday = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET reopen_everyday = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
      # 根据产品id和日期修改每日修复bug数
-    def update_resolved_everyday(self,conn,param):
+    def update_resolved_everyday(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET resolved_everyday = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET resolved_everyday = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
     # 根据产品id和日期修改每日new状态的bug数
-    def update_new(self,conn,param):
+    def update_new(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET new = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET new = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
     # 根据产品id和日期修改in_progress状态的bug数
-    def update_in_progress(self,conn,param):
+    def update_in_progress(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET in_progress = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET in_progress = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
     # 根据产品id和日期修改reopen状态的bug数
-    def update_reopen(self,conn,param):
+    def update_reopen(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET reopen = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET reopen = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
     # 根据产品id和日期修改resolved状态的bug数
-    def update_resolved(self,conn,param):
+    def update_resolved(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET resolved = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET resolved = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
     # 根据产品id和日期修改in_progress状态的bug数
-    def update_closed(self,conn,param):
+    def update_closed(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE newdate SET closed = ? WHERE product_id = ? and date = ?",param)
+        cu.execute("UPDATE newdate SET closed = ? WHERE product_id = ? and date = ?",params)
         conn.conmmit()
 
      # 根据产品id和日期删除一条数据
@@ -86,7 +86,7 @@ class Newdate():
         conn.commit()
 
     # 查询数据
-    def select(self,conn,param):
+    def select(self,conn,params):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM newdate where product_id = ? and date = ?",param)
+        cu.execute("SELECT * FROM newdate where product_id = ? and date = ?",params)
         print(cu.fetchall())

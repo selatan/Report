@@ -19,13 +19,13 @@ class Receiver():
         conn.commit()
 
     # 根据产品id修改收件人\抄送人\密送人地址
-    def update(self,conn,param):
+    def update(self,conn,params):
         cu = conn.cursor()
-        cu.execute("UPDATE receiver SET receiver = ? and cc = ? and bcc = ? WHERE product_id = ?",param)
+        cu.execute("UPDATE receiver SET receiver = ? and cc = ? and bcc = ? WHERE product_id = ?",params)
         conn.conmmit()
 
     # 查询数据
-    def select(self,conn,param):
+    def select(self,conn,params):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM receiver where product_id = ?",param)
+        cu.execute("SELECT * FROM receiver where product_id = ?",params)
         print(cu.fetchall())

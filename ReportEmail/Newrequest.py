@@ -17,25 +17,25 @@ class Newrequest():
         conn.commit()
 
     # 根据产品id修改新需求
-    def update_new_request(self, conn, param):
+    def update_new_request(self, conn, params):
         cu = conn.cursor()
-        cu.execute("UPDATE newrequest SET new_request = ? WHERE product_id = ?", param)
+        cu.execute("UPDATE newrequest SET new_request = ? WHERE product_id = ?", params)
         conn.conmmit()
 
     # 根据产品id修改提测情况(0表示未提测,1表示已提测,默认值为0)
-    def update_is_testing(self, conn, param):
+    def update_is_testing(self, conn, params):
         cu = conn.cursor()
-        cu.execute("UPDATE newrequest SET is_testing = ? WHERE product_id = ?", param)
+        cu.execute("UPDATE newrequest SET is_testing = ? WHERE product_id = ?", params)
         conn.conmmit()
 
     # 根据产品id修改测试完成情况(0~100,默认值为0)
-    def update_is_finish(self, conn, param):
+    def update_is_finish(self, conn, params):
         cu = conn.cursor()
-        cu.execute("UPDATE newrequest SET is_finish = ? WHERE product_id = ? and is_testing = 1", param)
+        cu.execute("UPDATE newrequest SET is_finish = ? WHERE product_id = ? and is_testing = 1", params)
         conn.conmmit()
 
     # 查询数据
-    def select(self, conn, param):
+    def select(self, conn, params):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM newrequest where product_id = ?", param)
+        cu.execute("SELECT * FROM newrequest where product_id = ?", params)
         print(cu.fetchall())

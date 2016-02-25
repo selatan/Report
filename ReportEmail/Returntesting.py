@@ -17,13 +17,13 @@ class Returntesting():
         conn.commit()
 
     # 根据产品id和回归功能内容修改测试完成情况
-    def update(self, conn, param):
+    def update(self, conn, params):
         cu = conn.cursor()
-        cu.execute("UPDATE returntesting SET is_finish = ? WHERE product_id = and return = ?", param)
+        cu.execute("UPDATE returntesting SET is_finish = ? WHERE product_id = and return = ?", params)
         conn.conmmit()
 
     # 查询数据
-    def select(self, conn, param):
+    def select(self, conn, params):
         cu = conn.cursor()
-        cu.execute("SELECT * FROM returntesting where product_id = ?", param)
+        cu.execute("SELECT * FROM returntesting where product_id = ?", params)
         print(cu.fetchall())
