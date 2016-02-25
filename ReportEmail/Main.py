@@ -36,4 +36,7 @@ class DbManager:
     def newrequest_insert(cls,conn,params):
         newrequest.insert(conn,params)
 
+    @classmethod
+    def newrequest_remove(cls,conn,params):
+        newrequest.remove(conn,params)
 
