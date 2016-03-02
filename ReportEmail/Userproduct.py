@@ -4,12 +4,14 @@ class Userproduct():
 
     #@params 传入参数的元祖，例如：(用户姓名, 产品id)
     #插入数据
+    @classmethod
     def insert(self, conn, params):
         cu = conn.cursor()
         cu.execute("INSERT INTO userproduct(username,product_id) VALUES(?,?)", params)
         conn.commit()
 
     #删除数据
+    @classmethod
     def remove(self,conn,params):
         cu = conn.cursor()
         cu.execute("DELETE FROM userproduct WHERE username = ? and product_id= ?",params)
@@ -17,6 +19,7 @@ class Userproduct():
 
 
     #查询数据
+    @classmethod
     def select(self,conn,params):
         cu = conn.cursor()
         cu.execute("SELECT * FROM userproduct where username = ?",params)
