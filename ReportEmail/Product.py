@@ -23,21 +23,21 @@ class Product():
 
     #根据id修改成新的版本号
     @classmethod
-    def updateVersion(self,conn,params):
+    def updateVersion(cls,conn,params):
         cu = conn.cursor()
         cu.execute("UPDATE product SET Version= ? WHERE id = ?",params)
         conn.commit()
 
     #根据id号修改产品的功能模块
     @classmethod
-    def updateComponent(self,conn,params):
+    def updateComponent(cls,conn,params):
         cu = conn.cursor()
         cu.execute("UPDATE product SET component = ? WHERE id = ?",params)
         conn.commit()
 
     #根据id号查询数据
     @classmethod
-    def select(self,conn,id):
+    def select(cls,conn,id):
         cu = conn.cursor()
         cu.execute("SELECT * FROM product where id =?",id)
         #print(cu.fetchall())  #从结果中取出所有数据

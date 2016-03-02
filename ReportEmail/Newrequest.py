@@ -27,21 +27,21 @@ class Newrequest():
 
     # 根据产品id修改提测情况(0表示未提测,1表示已提测,默认值为0)
     @classmethod
-    def update_is_testing(self, conn, params):
+    def update_is_testing(cls, conn, params):
         cu = conn.cursor()
         cu.execute("UPDATE newrequest SET is_testing = ? WHERE product_id = ?", params)
         conn.conmmit()
 
     # 根据产品id修改测试完成情况(0~100,默认值为0)
     @classmethod
-    def update_is_finish(self, conn, params):
+    def update_is_finish(cls, conn, params):
         cu = conn.cursor()
         cu.execute("UPDATE newrequest SET is_finish = ? WHERE product_id = ? and is_testing = 1", params)
         conn.conmmit()
 
     # 查询数据
     @classmethod
-    def select(self, conn, params):
+    def select(cls, conn, params):
         cu = conn.cursor()
         cu.execute("SELECT * FROM newrequest where product_id = ?", params)
         print(cu.fetchall())
