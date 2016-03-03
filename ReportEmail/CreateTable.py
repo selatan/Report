@@ -22,7 +22,7 @@ cu.execute('''CREATE TABLE "userproduct" (
           "username"  TEXT NOT NULL,
           FOREIGN KEY ("product_id") REFERENCES "product" ("id"))''')
 
-#创建表allproduct——表3
+#创建表allproduct——表3333
 cu.execute('''CREATE TABLE "product" (
         "id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         "product_name"  TEXT NOT NULL,
